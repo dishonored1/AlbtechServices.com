@@ -1,0 +1,46 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    
+    
+    }
+    
+    
+    .main{
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(painting.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 109vh;
+    
+    
+    }
+    .logo{
+        color: white;
+        font-size: 25px;
+        font-family: Arial;
+        
+    }
+
+    ul li{
+
+        list-style: none;
+        margin-left: 62px;
+        margin-top: 27px;
+        font-size: 30px;
+    
+    }
+    
+    ul li a{
+        text-decoration: none;
+        color: white;
+        font-family: Arial;
+        font-weight: bold;
+        transition: 0.4s ease-in-out;
+    
+    }
+    
+    ul li a:hover{
+        color: blue;
+    }
