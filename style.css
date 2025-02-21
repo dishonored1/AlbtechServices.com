@@ -8,7 +8,7 @@ padding: 0;
 
 
 .main{
-width: 100%;
+width: 50%;
 background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(cleaning.jpeg);
 background-position: center;
 background-size: cover;
