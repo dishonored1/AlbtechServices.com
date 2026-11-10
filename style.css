@@ -180,3 +180,62 @@ img { max-width: 100%; }
   z-index: 2;
   text-shadow: 0 2px 10px rgba(0, 0, 0, .45);
 }
+
+
+/* Homepage mobile layout: show both project photos as a clean side-by-side image strip */
+@media (max-width: 600px) {
+  .hero-home {
+    display: block;
+    min-height: 0;
+    background-color: #202126;
+    background-image: url("cleaning.jpeg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 50% 245px;
+  }
+  .hero-home::before {
+    display: none;
+  }
+  .hero-home::after {
+    inset: 0 auto auto 0;
+    width: 50%;
+    height: 245px;
+    background-image: url("painting-feature.png");
+    background-position: center;
+    background-size: cover;
+  }
+  .hero-home .hero-content {
+    width: 100%;
+    margin: 245px 0 0;
+    padding: 30px 20px 34px;
+    background: #202126;
+    text-shadow: none;
+  }
+  .hero-home h1 {
+    max-width: 520px;
+    font-size: clamp(32px, 8.5vw, 42px);
+    line-height: 1.08;
+    letter-spacing: -1.2px;
+  }
+  .hero-home .eyebrow {
+    margin-bottom: 10px;
+    font-size: 10px;
+    letter-spacing: 1.6px;
+  }
+  .hero-home .hero-copy {
+    margin: 16px 0 22px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .hero-home .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero-home .hero-actions .button {
+    width: 100%;
+  }
+  .hero-home .hero-note {
+    display: none;
+  }
+}
