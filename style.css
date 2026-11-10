@@ -182,22 +182,32 @@ img { max-width: 100%; }
 }
 
 
-/* Restore the original mobile homepage hero; retain the split photos on larger screens */
+/* Mobile homepage hero: painting on the left, existing cleaning photo on the right */
 @media (max-width: 600px) {
   .hero-home {
     background-image: url("cleaning.jpeg");
-    background-position: 58% center;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
   }
   .hero-home::before {
-    z-index: auto;
-    background: linear-gradient(90deg, rgba(12,14,18,.82), rgba(12,14,18,.52));
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(12,14,18,.68), rgba(12,14,18,.48));
   }
   .hero-home::after {
-    display: none;
+    display: block;
+    position: absolute;
+    z-index: 0;
+    inset: 0 50% 0 0;
+    content: "";
+    background-image: url("painting-feature-mobile.webp");
+    background-position: center;
+    background-size: cover;
+    pointer-events: none;
   }
   .hero-home .hero-content,
   .hero-home .hero-note {
-    z-index: 1;
-    text-shadow: none;
+    z-index: 2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .45);
   }
 }
