@@ -182,32 +182,67 @@ img { max-width: 100%; }
 }
 
 
-/* Mobile homepage hero: painting on the left, existing cleaning photo on the right */
+/* Mobile homepage hero: responsive photo panels that preserve each image's proportions */
 @media (max-width: 600px) {
   .hero-home {
+    --mobile-hero-photo-height: clamp(150px, 42vw, 220px);
+    display: block;
+    min-height: 0;
+    background-color: #202126;
     background-image: url("cleaning.jpeg");
-    background-position: right center;
     background-repeat: no-repeat;
-    background-size: 50% 100%;
+    background-position: right top;
+    background-size: 50% var(--mobile-hero-photo-height);
   }
   .hero-home::before {
-    z-index: 1;
-    background: linear-gradient(90deg, rgba(12,14,18,.68), rgba(12,14,18,.48));
+    display: none;
   }
   .hero-home::after {
     display: block;
     position: absolute;
     z-index: 0;
-    inset: 0 50% 0 0;
+    inset: 0 auto auto 0;
+    width: 50%;
+    height: var(--mobile-hero-photo-height);
     content: "";
     background-image: url("painting-feature-mobile.webp");
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     pointer-events: none;
   }
-  .hero-home .hero-content,
+  .hero-home .hero-content {
+    width: 100%;
+    margin: var(--mobile-hero-photo-height) 0 0;
+    padding: 30px 20px 34px;
+    background: #202126;
+    text-shadow: none;
+  }
+  .hero-home h1 {
+    max-width: 520px;
+    font-size: clamp(32px, 8.5vw, 42px);
+    line-height: 1.08;
+    letter-spacing: -1.2px;
+  }
+  .hero-home .eyebrow {
+    margin-bottom: 10px;
+    font-size: 10px;
+    letter-spacing: 1.6px;
+  }
+  .hero-home .hero-copy {
+    margin: 16px 0 22px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .hero-home .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero-home .hero-actions .button {
+    width: 100%;
+  }
   .hero-home .hero-note {
-    z-index: 2;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, .45);
+    display: none;
   }
 }
