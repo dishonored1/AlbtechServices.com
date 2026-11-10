@@ -181,9 +181,23 @@ img { max-width: 100%; }
   text-shadow: 0 2px 10px rgba(0, 0, 0, .45);
 }
 
-/* Restore the original mobile hero overlay while keeping the split project photos */
+
+/* Restore the original mobile homepage hero; retain the split photos on larger screens */
 @media (max-width: 600px) {
+  .hero-home {
+    background-image: url("cleaning.jpeg");
+    background-position: 58% center;
+  }
   .hero-home::before {
+    z-index: auto;
     background: linear-gradient(90deg, rgba(12,14,18,.82), rgba(12,14,18,.52));
+  }
+  .hero-home::after {
+    display: none;
+  }
+  .hero-home .hero-content,
+  .hero-home .hero-note {
+    z-index: 1;
+    text-shadow: none;
   }
 }
