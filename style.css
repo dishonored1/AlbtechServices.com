@@ -155,3 +155,31 @@ img { max-width: 100%; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Homepage hero split: painting project on the left, existing cleaning image on the right */
+.hero-home {
+  background-image: url("cleaning.jpeg");
+  background-position: right center;
+}
+.hero-home::before {
+  z-index: 1;
+}
+.hero-home::after {
+  position: absolute;
+  z-index: 0;
+  inset: 0 50% 0 0;
+  content: "";
+  background-image: linear-gradient(90deg, rgba(12, 14, 18, .83) 0%, rgba(12, 14, 18, .58) 48%, rgba(12, 14, 18, .18) 100%), url("painting-feature.png");
+  background-position: center;
+  background-size: cover;
+  pointer-events: none;
+}
+.hero-home .hero-content,
+.hero-home .hero-note {
+  z-index: 2;
+}
+@media (max-width: 600px) {
+  .hero-home::after {
+    inset-right: 50%;
+  }
+}
