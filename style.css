@@ -178,8 +178,3 @@ img { max-width: 100%; }
 .hero-home .hero-note {
   z-index: 2;
 }
-@media (max-width: 600px) {
-  .hero-home::after {
-    inset-right: 50%;
-  }
-}
